@@ -1,2 +1,0 @@
-# mokkaya_webauto
-mokkayaDemo
