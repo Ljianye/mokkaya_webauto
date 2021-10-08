@@ -3,16 +3,10 @@ import time
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
-
-    #打开页面
-    def open(self,driver:WebDriver,url):
-        driver.get(url)
-
     # 获取元素
     def findElement(self, driver: WebDriver, by_type: str, by_value) -> WebElement:
         by_type = by_type.lower()
@@ -38,13 +32,3 @@ class BasePage:
             return WebDriverWait(driver, 30000, 1).until(lambda dr: dr.find_element(tep_by, by_value))
         except Exception:
             return None
-
-        # 输入文本
-
-    def sendText(self, driver: WebDriver, text):
-        self.findElement(driver).send_keys(text)
-
-        # 点击
-
-    def click(self, driver: WebDriver, keyName):
-        self.findElement(driver).click()

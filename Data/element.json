@@ -1,0 +1,5 @@
+{
+  "邮箱": {"by": "xpath", "value": "//input[@type='text']"},
+  "密码": {"by": "xpath", "value": "//input[@type='password']"},
+  "登录":{"by": "xpath", "value": "//span[text()='Go!']"}
+}
