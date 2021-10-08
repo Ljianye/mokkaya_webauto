@@ -3,6 +3,7 @@ import time
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 
@@ -28,7 +29,7 @@ class BasePage:
         elif by_type == "css":
             tep_by = By.CSS_SELECTOR
         try:
-            # 显示获取等待获取元素
-            return WebDriverWait(driver, 30000, 1).until(lambda dr: dr.find_element(tep_by, by_value))
+            # 显示获取等待获取元素lambda dr: dr.find_element(tep_by, by_value)
+            return WebDriverWait(driver, 30000, 1).until(expected_conditions.element_to_be_clickable((tep_by, by_value)))
         except Exception:
             return None
