@@ -1,6 +1,6 @@
 import pytest
 import yaml
-
+import time
 from Page.loginpage import LoginPage
 
 
@@ -17,3 +17,4 @@ class TestLogin():
         loginpage.inputname("邮箱", name)
         loginpage.inputpwd("密码", pwd)
         loginpage.clicklogin("登录")
+
