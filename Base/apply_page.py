@@ -8,6 +8,7 @@ from Base.base_page import BasePage
 
 
 class ApplyPage(BasePage):
+
     # 加载页面
     def toPage(self, driver: WebDriver, url):
         driver.get(url)
