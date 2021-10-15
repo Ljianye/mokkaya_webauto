@@ -2,19 +2,20 @@ import pytest
 import yaml
 import time
 from Page.loginpage import LoginPage
+from Tool.getyaml import GetYaml
 
 
 class TestLogin():
-    loginpage:LoginPage=None
-    def setupclass(self):
-        #初始化登录页面
-       loginpage=LoginPage()
+    def setup_class(self):
+        # 第一次实例化
+        self.loginpage = LoginPage()
 
-    @pytest.mark.parametrize("name,pwd", yaml.safe_load(open("../Data/logindata.yml", "r")))
-    def test_login(self,name,pwd):
-        loginpage = LoginPage()
-        loginpage.open("https://test.admin.mokkaya.com/")
-        loginpage.inputname("邮箱", name)
-        loginpage.inputpwd("密码", pwd)
-        loginpage.clicklogin("登录")
+    @pytest.mark.parametrize("data",GetYaml("../Data/logindata.yml").get_data("正确数据"))
+    def test_login(self,data:dict):
+        #self.loginpage.open("https://test.admin.mokkaya.com/#/login")
+        print(data)
+        print(type(data))
+        # self.loginpage.inputname("邮箱",data["name"])
+        # self.loginpage.inputpwd("密码", data["pwd"])
+        # self.loginpage.clicklogin("登录")
 
