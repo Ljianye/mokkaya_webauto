@@ -1,7 +1,12 @@
 #[("aaaaa","bbbbbbbbb"),("jianye@newsinpalm.com","Baca@123")]
--
- - "jianye@newsinpalm.com"
- - "Baca@1234"
-
+##input:
+# user: admin
+# psw: 123456
+正确数据:
+   name: jianye@newsinpalm.com
+   pwd: "Baca@1234"
+错误数据:
+  name: jianye@newsinpalm.com
+  pwd: Baca@1234
 
 
