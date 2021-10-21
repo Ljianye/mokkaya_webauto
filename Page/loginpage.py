@@ -10,13 +10,9 @@ class LoginPage(ApplyPage):
         self.driver = webdriver.Chrome()
     def open(self,url):
         self.driver.get(url)
-    #输入用户名
-    def inputname(self,keyname,text):
-        self.sendText(self.driver,keyname,text)
-    #输入密码
-    def inputpwd(self,keyname,text):
-        self.sendText(self.driver,keyname,text)
-      # 点击登录
-    def clicklogin(self,keyname):
-        self.click(self.driver,keyname)
+
+    def login(self,name,pwd):
+        self.sendText(self.driver, "邮箱", name)
+        self.sendText(self.driver, "密码", pwd)
+        self.click(self.driver,"登录")
 
