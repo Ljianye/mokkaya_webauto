@@ -65,7 +65,7 @@ class ApplyPage(BasePage):
 
 
 def getJsonData(keyName) -> dict:
-    apply_json_path = "D:\\Python_Code\\test_one\\Data\\element.json"
+    apply_json_path = "../Data/element.json"
     with open(apply_json_path, mode="r", encoding="utf-8") as f:
         jsonStr = f.read()
         json_dict = json.loads(jsonStr)

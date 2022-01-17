@@ -9,15 +9,15 @@ class TestWework:
   def test_demo(self):
     opt = webdriver.ChromeOptions()
     # 设置debug地址
-    opt.debugger_address = "127.0.0.1:9020"
-    driver = webdriver.Chrome(options=opt)
-    driver.implicitly_wait(5)
-    driver.get("https://test.admin.mokkaya.com/#/sku/list")
-    driver.find_element_by_xpath("//*[@id='pane-0']/form/div[15]/div/button[2]v").click()
-    cookies=driver.get_cookies()
-    with open("ckk.yml","w",encoding="utf-8") as ck:
-          for c in cookies:
-              yaml.dump(c)
+
+    driver = webdriver.Chrome()
+
+    driver.get("https://test.admin.mokkaya.com/#/login")
+    # driver.find_element_by_xpath("//*[@id='pane-0']/form/div[15]/div/button[2]v").click()
+    # cookies=driver.get_cookies()
+    # with open("ckk.yml","w",encoding="utf-8") as ck:
+    #       for c in cookies:
+    #           yaml.dump(c)
 
 
 
